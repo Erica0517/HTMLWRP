@@ -1,0 +1,634 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untitled</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="610f2462-5cdd-4d48-bf7a-8aafef5918af" class="page sans"><header><h1 class="page-title"></h1></header><div class="page-body"><h3 id="b958462d-4b1b-48ce-9f2b-86bc33906149" class="">Data preprocessing</h3><p id="52aa08b6-cf58-4be4-88f9-934027e47e26" class="">For the data preprocessing step, simply run the code listed below in order.</p><ol id="116e59d0-9410-478e-9932-0c734a653c08" class="numbered-list" start="1"><li>data splitting<ul id="e60354b8-fc0c-4fce-8e4f-d9f2f209031e" class="bulleted-list"><li>within-subject data splitting: \DataPreprocessing\data_split_within.py</li></ul><ul id="c083716e-a8c4-4289-bf1a-75ecc13a204b" class="bulleted-list"><li>cross-subject data spplitting: \DataPreprocessing\data_split_cross.py</li></ul></li></ol><ol id="072697f3-22f8-41f0-a4d2-3b5c121663e9" class="numbered-list" start="2"><li>EEG signals to images<ul id="4b3e04dd-9a12-42a9-966b-4acc85f7f107" class="bulleted-list"><li>\DataPreprocessing\<a href="http://eegtoimg.py/">eegtoimg.py</a></li></ul></li></ol><h3 id="c9fe4cf7-6e32-456f-9219-27e9f80bcd9a" class="">Generate EEG images with dummy identities</h3><p id="6fdeb20c-f6d0-4ad5-82fd-401f900676dd" class="">please run the following code in order:</p><ol id="b4c824d9-b4d4-4008-ba8e-5ba73c42192d" class="numbered-list" start="1"><li>time-frequency conversion:<ul id="c50ba7d7-7518-45af-96f6-704ae0781f27" class="bulleted-list"><li>\DataPreprocessing\<a href="http://t2f.py/">t2f.py</a></li></ul></li></ol><ol id="8b288e70-68e6-45fb-b011-b47ec45e5ea1" class="numbered-list" start="2"><li>From EEG spectrums to EEG images with dummy identities:<ul id="82d31db5-3796-428b-8acb-7a896bf789b5" class="bulleted-list"><li>\DataPreprocessing\grand_avg.py</li></ul></li></ol><ol id="b8d4f1da-beba-40dd-b509-b56a4d7b953a" class="numbered-list" start="3"><li>joint training set:<ul id="ee1c252a-7990-4d42-8bc4-e936fce00345" class="bulleted-list"><li>\DataPreprocessing\gen_joint_train_set.py</li></ul></li></ol><ol id="3266d428-5e28-45b3-8131-4c90eddfde29" class="numbered-list" start="4"><li>the following .mat file generated before should be placed in the folder \EEG_idendity_disguising\datasets\eeg<ul id="10eb1f4a-b268-4b0d-a935-6102a2ede4b4" class="bulleted-list"><li>eeg_dummy_images_w_label_step3_within.mat</li></ul><ul id="02f40cdd-edcc-47a9-ad8e-08ada5d8a36d" class="bulleted-list"><li>eeg_images_train_augmented_within.mat</li></ul><ul id="d7142540-5d1e-43a3-8ec3-1930a4edfa05" class="bulleted-list"><li>uci_eeg_images_test_within.mat</li></ul><ul id="c6fac969-ca01-4e43-bad9-fceb831f01a7" class="bulleted-list"><li>uci_eeg_images_train_within.mat</li></ul><ul id="b11bf221-299f-43c6-b9d0-e46de368b80c" class="bulleted-list"><li>uci_eeg_images_validation_within.mat</li></ul></li></ol><p id="34732a79-6164-4a28-8964-6ce2c5d4d3f1" class="">*<em>I manually did this because I run the data processing code on my own device but run my code for the model on a virtual machine.</em></p><h3 id="2a3a23e8-c092-45c3-9928-56724201465f" class="">Train the EEG disguising Model</h3><ul id="55ebbe06-6569-414c-a546-923edc4a41ad" class="bulleted-list"><li>First use <code>data_extra_combined_label.ipynb</code> in the folder \EEG_idendity_disguising\datasets\eeg to generate training set with extra combined label</li></ul><ul id="919be96b-5240-49f1-a434-488c3c8f2c59" class="bulleted-list"><li>Run the script:</li></ul><pre id="99ec3240-4677-4c54-a41b-8fbf07122bf0" class="code"><code>python -m visdom.server
+</code></pre><ul id="28338f87-68ee-4d04-889d-f13f2ce6d3ab" class="bulleted-list"><li>Train the model with the semantic constraint on alocoholism feature</li></ul><pre id="c209d716-c4c8-4276-a728-f68f82484d2a" class="code"><code>python train.py --name cycada_alcoholism --resize_or_crop=None --loadSize=32 --fineSize=32 --which_model_netD n_layers --n_layers_D 3 --model cycle_gan_semantic --lambda_A 1 --lambda_B 1 --lambda_identity 0 --no_flip --batchSize 64 --dataset_mode EEG --dataroot ./datasets/eeg/ --data_real uci_eeg_images_train_within_extra.mat --data_dummy eeg_dummy_images_w_label_step3_within_extra.mat --which_direction BtoA --feature alcoholism --num_classes 2
+</code></pre><ul id="2d408e15-8fc5-4ab5-b734-3a391978465a" class="bulleted-list"><li>Train the model with the semantic constraint on stimulus</li></ul><pre id="c8b25f3e-0dd1-431a-84d2-2e0d4a0ec11e" class="code"><code>python train.py --name cycada_stimulus --resize_or_crop=None --loadSize=32 --fineSize=32 --which_model_netD n_layers --n_layers_D 3 --model cycle_gan_semantic --lambda_A 1 --lambda_B 1 --lambda_identity 0 --no_flip --batchSize 64 --dataset_mode EEG --dataroot ./datasets/eeg/ --data_real uci_eeg_images_train_within_extra.mat --data_dummy eeg_dummy_images_w_label_step3_within_extra.mat --which_direction BtoA --feature stimulus --num_classes 5
+</code></pre><ul id="53e3573d-cbbc-49b1-983f-c3df6aa18c36" class="bulleted-list"><li>Train the model with the semantic constraint on the combined label (alcoholism + stimulus)</li></ul><pre id="cba9bc15-790f-4897-9830-e28377a24baa" class="code"><code>python train.py --name cycada_combined --resize_or_crop=None --loadSize=32 --fineSize=32 --which_model_netD n_layers --n_layers_D 3 --model cycle_gan_semantic --lambda_A 1 --lambda_B 1 --lambda_identity 0 --no_flip --batchSize 64 --dataset_mode EEG --dataroot ./datasets/eeg/ --data_real uci_eeg_images_train_within_extra.mat --data_dummy eeg_dummy_images_w_label_step3_within_extra.mat --which_direction BtoA --feature combined --num_classes 10
+</code></pre><ul id="f2593ee6-ebe5-4687-9fbd-8b7db59870dc" class="bulleted-list"><li>Train the model without semantic constraint</li></ul><pre id="a6d9af33-1430-4fc0-96b6-0ce743c6f6a2" class="code"><code>python train.py --name cyclegan --resize_or_crop=None --loadSize=32 --fineSize=32 --which_model_netD n_layers --n_layers_D 3 --model cycle_gan --lambda_A 1 --lambda_B 1 --lambda_identity 0 --no_flip --batchSize 64 --dataset_mode EEG --dataroot ./datasets/eeg/ --data_real uci_eeg_images_train_within_extra.mat --data_dummy eeg_dummy_images_w_label_step3_within_extra.mat --which_direction BtoA
+</code></pre><h3 id="b33ed960-e47c-4c12-a2c8-dd272d08cd12" class="">Train the Classification Model</h3><ul id="a2e6e9a6-5a31-404c-8350-a7d28b6991cc" class="bulleted-list"><li>in the directory /EEG_identity_disguising/validation</li></ul><ul id="b08fe377-a818-4178-afca-d7b2d20cbf73" class="bulleted-list"><li>train the ResNet classifier<ul id="eed9c105-a6a2-42fe-8acf-5c097bf542e4" class="bulleted-list"><li>Select the ResNet model (ResNet18|ResNet34|ResNet50) and the classification task (alcoholism|stimulus|id) when training, for example:</li></ul></li></ul><pre id="61da9025-5b6c-4085-a9a5-94e92398619f" class="code"><code>python3 resnet_classification_model.py --model ResNet18 --feature alcoholism
+</code></pre><p id="13f9cd45-2c04-498f-9703-225fc7b82294" class=""><em>The script above train a ResNet-18 model to perform the alcoholism detection task.</em></p><h3 id="12c73d39-ccf4-4bc3-9dd7-886a1a207b39" class="">Test the EEG disguising Model</h3><ul id="a1c48a9c-ddb4-4006-bfe1-1e3976805745" class="bulleted-list"><li>several essential option in the script<ul id="380df55e-ed41-4160-8811-9415c2653d4d" class="bulleted-list"><li><code>--name</code> checkpoints folder name</li></ul><ul id="811a9280-5189-464b-9471-03dd9acaf21e" class="bulleted-list"><li><code>--classifier</code> which classifier is used for evaluation</li></ul><ul id="7d50c960-d72e-4e44-a483-5d6598233f14" class="bulleted-list"><li><code>--test_all</code> use this argument to require the validation on the model from all checkpoints saved every 5 training epochs</li></ul><ul id="5396126a-4eda-4f69-ad4b-73631ec86c7b" class="bulleted-list"><li><code>--which_epoch</code> if <code>test_all</code> not specified, select one epoch of the model to test</li></ul></li></ul><ul id="b22320f7-82c7-479a-bfdd-cdd424ce56ff" class="bulleted-list"><li>the example script below load checkpoints from the checkpoints <code>cycada_alcoholism_v2</code>, and requires to test the model from all training epochs</li></ul><pre id="f30e722c-62e6-4c70-83af-189db4263369" class="code"><code>python validation.py --name cycada_alcoholism_v2 --resize_or_crop=None --loadSize=32 --fineSize=32 --which_model_netD n_layers --n_layers_D 3 --model test --no_flip --batchSize 32 --dataset_mode EEGsingle  --dataroot ./datasets/eeg/ --data uci_eeg_images_validation_within.mat  --which_direction BtoA --phase train --how_many 100000 --classifier ResNet34 --test_all
+</code></pre><ul id="a7ca6018-4418-4070-b9fe-fe1fcd008881" class="bulleted-list"><li>the scripts below are the ones with the experiemnt results I put in the report.</li></ul><pre id="1bbe9f1b-5e86-4fac-958c-7c1adec74f65" class="code"><code>python validation.py --name cycada_alcoholism_v2 --resize_or_crop=None --loadSize=32 --fineSize=32 --which_model_netD n_layers --n_layers_D 3 --model test --no_flip --batchSize 32 --dataset_mode EEGsingle  --dataroot ./datasets/eeg/ --data uci_eeg_images_validation_within.mat  --which_direction BtoA --phase train --how_many 100000 --classifier ResNet34 --which_epoch 190
+</code></pre><pre id="839aa99d-1c0d-4a86-b801-ac51ce4125d2" class="code"><code>python validation.py --name cycada_stimulus_v2 --resize_or_crop=None --loadSize=32 --fineSize=32 --which_model_netD n_layers --n_layers_D 3 --model test --no_flip --batchSize 32 --dataset_mode EEGsingle  --dataroot ./datasets/eeg/ --data uci_eeg_images_validation_within.mat  --which_direction BtoA --phase train --how_many 100000 --classifier ResNet34 --which_epoch 45
+</code></pre><pre id="0968c0b5-37f6-4273-b79a-a2b9d2b10069" class="code"><code>python validation.py --name cycada_combined_v2 --resize_or_crop=None --loadSize=32 --fineSize=32 --which_model_netD n_layers --n_layers_D 3 --model test --no_flip --batchSize 32 --dataset_mode EEGsingle  --dataroot ./datasets/eeg/ --data uci_eeg_images_validation_within.mat  --which_direction BtoA --phase train --how_many 100000 --classifier ResNet34 --which_epoch 150
+</code></pre><pre id="e96202f4-c61f-49e2-b3cf-4aff06ad26ed" class="code"><code>python validation.py --name cyclegan_v2 --resize_or_crop=None --loadSize=32 --fineSize=32 --which_model_netD n_layers --n_layers_D 3 --model test --no_flip --batchSize 32 --dataset_mode EEGsingle  --dataroot ./datasets/eeg/ --data uci_eeg_images_validation_within.mat  --which_direction BtoA --phase train --how_many 100000 --classifier ResNet34 --which_epoch 40
+</code></pre><p id="8f8b5ac5-2f1f-400a-b252-694af0f073a0" class="">The full version of the project with code, datasets and checkpoints are uploaded to this share link: <a href="https://anu365-my.sharepoint.com/:f:/g/personal/u6783346_anu_edu_au/EgceXDJhJvhBuzYdsF0ELogBhISm7VaMaH-rBRqMHj_DPQ?e=tjOhO2">code, datasets and checkpoints</a></p><p id="5ad0343b-7c8f-4d3e-bf5e-43c3386c3681" class="">*<em>You may need to downgrade scipy to 1.1.0</em></p><pre id="9af91993-e056-4b59-afe2-04d2a3e0efe2" class="code"><code>pip install scipy==1.1.0
+</code></pre></div></article></body></html>
